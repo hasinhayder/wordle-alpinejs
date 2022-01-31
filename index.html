@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+
+  <title>Wordle Using AlpineJS & TailwindiCSS</title>
+  <style>
+    .match {
+      background-color: #b59f3b;
+    }
+
+    .exactMatch {
+      background-color: #538d4e;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-gradient-to-bl from-green-400 to-blue-500 h-screen" x-data="wordle" @keyup="processKey($event)">
+  <a class="github-fork-ribbon left-top" href="https://github.com/hasinhayder/wordle-alpinejs.git" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+
+  <section class="container mx-auto pt-30">
+    <h1 class="text-white text-4xl text-center">Wordle Using AlpineJS & TailwindiCSS<span x-text="offset">d</span></h1>
+    <div class="flex flex-col pt-10 space-y-3">
+      <template x-for="(word,i) in words">
+        <div class="flex justify-center mt-10 space-x-2">
+          <template x-for="(letter,j) in word">
+            <div class="border-1 w-20 h-20 border-white flex text-4xl" x-bind:class="{match:letter.match,exactMatch:letter.exactMatch}">
+              <span class="m-auto uppercase" x-text="letter.value"></span>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <template x-if="locked">
+        <div class="pt-10 text-white text-4xl text-center">
+          Not a valid Word. Clearing...
+        </div>
+      </template>
+
+      <template x-if="gameOver">
+        <div class="pt-10 text-white text-4xl text-center">
+          Todays Wordle = <span class="uppercase" x-text='todaysWord'></span>
+        </div>
+      </template>
+
+      <div x-show="gameOver" class="pt-10 text-white text-center">
+        <button @click="restart()" class="bg-dark-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+          Restart
+        </button>
+      </div>
+
+    </div>
+  </section>
+  
+  <script src="//unpkg.com/alpinejs@3.8.1/dist/cdn.min.js" defer></script>
+  <script src="assets/js/possibilities.js"></script>
+  <script src="assets/js/game.js"></script>
+</body>
+
+</html>
