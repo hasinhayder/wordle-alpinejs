@@ -26,9 +26,9 @@
   <section class="container mx-auto pt-30">
     <h1 class="text-white text-4xl text-center">Wordle Using AlpineJS & Tailwind CSS</h1>
     <div class="flex flex-col pt-10 space-y-3">
-      <template x-for="(word,i) in words">
+      <template x-for="word in words">
         <div class="flex justify-center mt-10 space-x-2">
-          <template x-for="(letter,j) in word">
+          <template x-for="letter in word">
             <div class="border-1 w-20 h-20 border-white flex text-4xl" x-bind:class="{match:letter.match,exactMatch:letter.exactMatch}">
               <span class="m-auto uppercase" x-text="letter.value"></span>
             </div>

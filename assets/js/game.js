@@ -67,7 +67,6 @@ const wordle = {
       const _word = _words.join('')
       if (possibilities.includes(_word)) {
         //ok its a valid word
-        console.log('word found')
         for (index = 0; index < 5; index++) {
           if (this.todaysWord.includes(_words[index])) {
             //ok the letter is found somewhere - so it's a match. But is it an exact match? let's find out
