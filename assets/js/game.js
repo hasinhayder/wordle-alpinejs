@@ -2,7 +2,7 @@ const wordle = {
     todaysWord: "light",
     currentWordPosition: 0,
     offset: 0,
-    currentLock: 0,
+    offsetLock: 0,
     gameOver: false,
     locked: false,
     words: new Array(5).fill(null).map((x) => new Array(5).fill(null).map((x) => ({ value: '', match: false }))),
@@ -34,7 +34,7 @@ const wordle = {
 
       if (event.key == "Backspace") {
         //remove the last entered letter
-        if (this.offset == this.currentLock) {
+        if (this.offset == this.offsetLock) {
           return
         }
         this.offset--
@@ -62,12 +62,11 @@ const wordle = {
     
     match() {
       //process the current entry word
-      this.currentLock = this.currentWordPosition * 5 + 5
+      this.offsetLock = this.currentWordPosition * 5 + 5
       const _words = this.words[this.currentWordPosition].map((x) => x.value)
       const _word = _words.join('')
       if (possibilities.includes(_word)) {
         //ok its a valid word
-        console.log('word found')
         for (index = 0; index < 5; index++) {
           if (this.todaysWord.includes(_words[index])) {
             //ok the letter is found somewhere - so it's a match. But is it an exact match? let's find out
