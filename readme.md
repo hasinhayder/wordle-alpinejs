@@ -1,6 +1,6 @@
 # Wordle
 
-Wordle using Alpine JS and Tailwind CSS 
+Wordle using Alpine JS and Tailwind CSS [Only Desktop View]
 
 Demo: https://hasinhayder.github.io/wordle-alpinejs
 
