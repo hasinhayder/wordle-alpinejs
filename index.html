@@ -42,7 +42,7 @@
         </div>
       </template>
 
-      <template x-if="gameOver">
+      <template x-if="showResult">
         <div class="pt-10 text-white text-4xl text-center">
           Todays Wordle = <span class="uppercase" x-text='todaysWord'></span>
         </div>
@@ -51,6 +51,10 @@
       <div x-show="gameOver" class="pt-10 text-white text-center">
         <button @click="restart()" class="bg-dark-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
           Restart
+        </button>
+
+        <button @click="showResult=true" class="bg-dark-500 hover:bg-red-700 text-white font-bold py-2 px-4  ml-5 rounded">
+          Show Result
         </button>
       </div>
 
