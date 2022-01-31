@@ -53,7 +53,7 @@
           Restart
         </button>
 
-        <button @click="showResult=true" class="bg-dark-500 hover:bg-red-700 text-white font-bold py-2 px-4  ml-5 rounded">
+        <button x-show="!showResult" @click="showResult=true" class="bg-dark-500 hover:bg-red-700 text-white font-bold py-2 px-4  ml-5 rounded">
           Show Result
         </button>
       </div>
