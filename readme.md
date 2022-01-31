@@ -1,4 +1,4 @@
-# Wordle
+# Wordle Game
 
 Wordle using Alpine JS and Tailwind CSS 
 
