@@ -1,5 +1,5 @@
 # Wordle
 
-Wordle using Alpine JS and TailwindCSS 
+Wordle using Alpine JS and Tailwind CSS 
 
 Demo: https://hasinhayder.github.io/wordle-alpinejs
