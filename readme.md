@@ -4,4 +4,4 @@ Wordle using Alpine JS and Tailwind CSS [Only Desktop View]
 
 Demo: https://hasinhayder.github.io/wordle-alpinejs
 
-![Wordle Preview](https://i.ibb.co/C5mf5hc/273016289-10158958076659633-2230063815835301897-n.jpg)
+![Wordle Preview](https://i.ibb.co/HnNSsTD/Screenshot-from-2022-01-31-23-40-48.png)
